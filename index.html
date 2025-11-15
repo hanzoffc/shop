@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eksplorasi Mendalam Interaktif: Fashion Market</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <style>
+        /* Desain Kursor Kustom yang Interaktif */
+        body {
+            cursor: none; /* Sembunyikan kursor default */
+        }
+        #custom-cursor {
+            position: fixed;
+            width: 30px;
+            height: 30px;
+            border: 2px solid #4ACAB6; /* Teal */
+            border-radius: 50%;
+            pointer-events: none;
+            transform: translate(-50%, -50%);
+            transition: all 0.1s ease-out;
+            z-index: 10000;
+        }
+        /* Efek Kursor saat Hover pada Elemen Interaktif */
+        .link-hover #custom-cursor {
+            transform: translate(-50%, -50%) scale(2);
+            background-color: #4ACAB640; /* Teal transparan */
+            border-color: #4ACAB6;
+        }
+
+        /* Gaya Kustom untuk Efek Glow pada Tombol */
+        .glow-button {
+            position: relative;
+            z-index: 10;
+            overflow: hidden;
+            transition: all 0.3s ease-in-out;
+        }
+        .glow-button::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 300%;
+            height: 300%;
+            background: radial-gradient(circle, rgba(74, 202, 182, 0.4) 0%, transparent 70%);
+            transition: transform 0.8s ease-out;
+            transform: translate(-50%, -50%) scale(0);
+            opacity: 0;
+            z-index: -1;
+        }
+        .glow-button:hover::before {
+            transform: translate(-50%, -50%) scale(1);
+            opacity: 1;
+        }
+
+        /* Video Background Styling */
+        .video-bg {
+            object-fit: cover;
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-white">
+
+    <div id="custom-cursor"></div>
+
+    <header id="hero" class="relative h-screen w-full flex items-center justify-center overflow-hidden">
+        
+        <video autoplay muted loop playsinline class="absolute z-0 w-auto min-w-full min-h-full max-w-none opacity-20 video-bg">
+            <source src="your-abstract-video.mp4" type="video/mp4">
+            <div class="absolute inset-0 bg-gray-900"></div>
+        </video>
+        
+        <div class="absolute inset-0 bg-black opacity-40 z-10"></div>
+
+        <div class="relative z-20 text-center px-4">
+            
+            <h1 id="main-title" class="text-5xl md:text-7xl font-extrabold mb-6 tracking-tight leading-tight opacity-0 transform translate-y-4">
+                Selami Realitas Fashion Baru
+            </h1>
+
+            <p id="sub-title" class="text-xl md:text-2xl text-teal-300 font-light mb-10 max-w-3xl mx-auto opacity-0 transform translate-y-4">
+                Bukan hanya melihat tren. **Merangkul, Merasakan, Memahami** evolusi market yang mendefinisikan gaya.
+            </p>
+
+            <button id="cta-button" 
+                class="glow-button px-10 py-4 text-lg font-semibold rounded-full bg-teal-500 hover:bg-teal-400 text-gray-900 shadow-xl transition duration-300 ease-in-out opacity-0 transform scale-95"
+                onclick="document.getElementById('scrollytelling').scrollIntoView({ behavior: 'smooth' });">
+                Mulai Eksplorasi
+            </button>
+        </div>
+        
+        <div class="absolute bottom-10 z-20 animate-bounce">
+            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+        </div>
+
+    </header>
+    
+    <section id="scrollytelling" class="relative bg-gray-900 min-h-screen pt-20 pb-40">
+        
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-10">
+            
+            <div class="md:col-span-5 relative h-full">
+                <div class="sticky top-0 pt-20 md:pt-40 pb-20">
+                    <h2 class="text-4xl font-bold text-white mb-6 tracking-wide">Analisis Tren:</h2>
+                    <div id="visual-container" class="w-full h-96 bg-gray-800 rounded-xl shadow-2xl flex items-center justify-center transition-all duration-700 ease-in-out p-6">
+                        <p class="text-2xl text-teal-400 font-medium">Geser ke Bawah untuk Memulai Eksplorasi</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="md:col-span-7 space-y-96">
+                
+                <div id="step-1" class="scrolly-step h-96 flex items-start flex-col justify-center bg-transparent p-6 rounded-lg transition-colors duration-500 hover:bg-gray-800 hover:bg-opacity-50">
+                    <span class="text-teal-400 font-semibold mb-2">01 / Inovasi</span>
+                    <h3 class="text-5xl font-extrabold mb-4 leading-tight text-white">Kebangkitan Digital Fashion</h3>
+                    <p class="text-xl text-gray-300">
+                        Market tidak lagi hanya di butik. Metaverse, NFT, dan *virtual apparel* menciptakan lapisan baru dalam nilai dan kepemilikan. **Apa yang Anda beli, bukan lagi hanya yang bisa Anda pakai.**
+                    </p>
+                </div>
+                
+                <div id="step-2" class="scrolly-step h-96 flex items-start flex-col justify-center bg-transparent p-6 rounded-lg transition-colors duration-500 hover:bg-gray-800 hover:bg-opacity-50">
+                    <span class="text-teal-400 font-semibold mb-2">02 / Etika</span>
+                    <h3 class="text-5xl font-extrabold mb-4 leading-tight text-white">Sirkularitas dan Transparansi</h3>
+                    <p class="text-xl text-gray-300">
+                        Konsumen kini menuntut transparansi rantai pasok. Tren *re-commerce* dan material daur ulang adalah **fondasi** wajib bagi brand yang ingin bertahan.
+                    </p>
+                </div>
+                
+                <div id="step-3" class="scrolly-step h-96 flex items-start flex-col justify-center bg-transparent p-6 rounded-lg transition-colors duration-500 hover:bg-gray-800 hover:bg-opacity-50">
+                    <span class="text-teal-400 font-semibold mb-2">03 / Interaksi</span>
+                    <h3 class="text-5xl font-extrabold mb-4 leading-tight text-white">Algoritma Membentuk Selera</h3>
+                    <p class="text-xl text-gray-300">
+                        AI dan analisis data memungkinkan personalisasi yang hyper-fokus. **Masa depan fashion adalah Anda yang menentukan desainnya.**
+                    </p>
+                </div>
+
+                <div class="h-96"></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-teal-500 py-24 text-center">
+        <h3 class="text-4xl font-extrabold text-gray-900 mb-4">Siap Mengubah Cara Anda Melihat Fashion?</h3>
+        <p class="text-xl text-gray-800 mb-8">Eksplorasi lebih dalam tentang simulasi tren market interaktif kami.</p>
+        <button class="px-8 py-3 bg-gray-900 text-white rounded-full hover:bg-black transition duration-300 font-semibold shadow-2xl">
+            Coba Simulasi Tren (Coming Soon)
+        </button>
+    </section>
+
+    <script>
+        // --- JAVASCRIPT UNTUK HERO SECTION ANIMASI ---
+        const mainTitle = document.getElementById('main-title');
+        const subTitle = document.getElementById('sub-title');
+        const ctaButton = document.getElementById('cta-button');
+
+        function animateHero() {
+            // Animasi Judul Utama
+            setTimeout(() => {
+                mainTitle.classList.remove('opacity-0', 'translate-y-4');
+                mainTitle.classList.add('transition-all', 'duration-1000', 'ease-out', 'opacity-100', 'translate-y-0');
+            }, 300); 
+
+            // Animasi Sub Judul
+            setTimeout(() => {
+                subTitle.classList.remove('opacity-0', 'translate-y-4');
+                subTitle.classList.add('transition-all', 'duration-1000', 'ease-out', 'opacity-100', 'translate-y-0');
+            }, 700); 
+
+            // Animasi Tombol CTA
+            setTimeout(() => {
+                ctaButton.classList.remove('opacity-0', 'scale-95');
+                ctaButton.classList.add('transition-all', 'duration-700', 'ease-out', 'opacity-100', 'scale-100');
+            }, 1200); 
+        }
+        window.addEventListener('load', animateHero);
+
+        // --- JAVASCRIPT UNTUK SCROLLYTELLING DAN CUSTOM CURSOR ---
+
+        // 1. Ambil Elemen DOM
+        const visualContainer = document.getElementById('visual-container');
+        const scrollySteps = document.querySelectorAll('.scrolly-step');
+        const customCursor = document.getElementById('custom-cursor');
+        const interactiveElements = document.querySelectorAll('button, a, .scrolly-step'); 
+
+        // 2. Data Visual untuk Scrollytelling
+        const visualData = {
+            'step-1': {
+                title: 'NFT & Virtual Wear',
+                content: 'Pasar virtual bernilai milyaran. Klik untuk melihat contoh koleksi.',
+                bgColor: 'bg-indigo-900',
+            },
+            'step-2': {
+                title: 'Circular Fashion',
+                content: 'Visualisasi rantai pasok transparan. Data real-time daur ulang.',
+                bgColor: 'bg-green-900',
+            },
+            'step-3': {
+                title: 'Hyper-Personalization',
+                content: 'Antarmuka AI Style Generator. Coba desain baju Anda sendiri!',
+                bgColor: 'bg-pink-900',
+            }
+        };
+
+        // 3. Konfigurasi Intersection Observer (API untuk Scrollytelling)
+        const observerOptions = {
+            root: null, 
+            rootMargin: '0px 0px -50% 0px', // Trigger saat elemen mencapai tengah viewport
+            threshold: 0 
+        };
+
+        const scrollyObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const stepId = entry.target.id;
+                    const data = visualData[stepId];
+                    
+                    // Perbarui Konten Visual Statis
+                    updateVisualContainer(data);
+
+                    // Berikan Efek Highlight
+                    scrollySteps.forEach(step => step.classList.remove('bg-gray-800/50'));
+                    entry.target.classList.add('bg-gray-800/50'); 
+                }
+            });
+        }, observerOptions);
+
+        function updateVisualContainer(data) {
+            // Reset dan Set Latar Belakang Baru
+            visualContainer.classList.remove('bg-gray-800', 'bg-indigo-900', 'bg-green-900', 'bg-pink-900');
+            visualContainer.classList.add(data.bgColor);
+
+            // Ganti Konten HTML
+            visualContainer.innerHTML = `
+                <div class="text-center p-6">
+                    <h4 class="text-3xl font-bold mb-2 text-white">${data.title}</h4>
+                    <p class="text-lg text-gray-200">${data.content}</p>
+                    <button class="mt-6 px-4 py-2 text-sm bg-white text-gray-900 rounded-full font-semibold hover:bg-teal-200 transition">Lihat Data</button>
+                </div>
+            `;
+        }
+
+        // Hubungkan Observer ke Setiap Step
+        scrollySteps.forEach(step => {
+            scrollyObserver.observe(step);
+        });
+
+        // 4. Logika Custom Cursor
+        document.addEventListener('mousemove', e => {
+            customCursor.style.left = e.clientX + 'px';
+            customCursor.style.top = e.clientY + 'px';
+        });
+
+        // Perubahan Kursor saat Hover
+        interactiveElements.forEach(el => {
+            el.addEventListener('mouseenter', () => {
+                document.body.classList.add('link-hover');
+            });
+            el.addEventListener('mouseleave', () => {
+                document.body.classList.remove('link-hover');
+            });
+        });
+
+    </script>
+</body>
+</html>
